@@ -24,11 +24,16 @@ function App() {
     localStorage.removeItem("loggedIn");
   };
 
+  const logOutHomeHandler = () => {
+    setIsLoggedIn(false);
+    localStorage.removeItem("loggedIn");
+  };
+
   return (
     <React.Fragment>
       <Header logInState={isLoggedIn} onLogOut={logOutHandler} />
       {!isLoggedIn && <LogInForm afterEnteredData={userDataHandler} />}
-      {isLoggedIn && <Home />}
+      {isLoggedIn && <Home onLogOut={logOutHomeHandler} />}
     </React.Fragment>
   );
 }
