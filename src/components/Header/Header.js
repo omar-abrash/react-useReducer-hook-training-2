@@ -11,7 +11,9 @@ const Header = (props) => {
   return (
     <header className={styles.header}>
       <h1>Logo</h1>
-      {props.logInState && <Navegation onLogOut={logOutHandler} />}
+      {props.logInState && (
+        <Navegation onLogOut={logOutHandler} logInState={props.logInState} />
+      )}
     </header>
   );
 };

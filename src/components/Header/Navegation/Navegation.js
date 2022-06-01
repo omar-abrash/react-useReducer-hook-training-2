@@ -13,17 +13,23 @@ const Navegation = (props) => {
   return (
     <nav className={styles.nav}>
       <ul>
-        <li>
-          <a href="/">Admin</a>
-        </li>
-        <li>
-          <a href="/">User</a>
-        </li>
-        <li>
-          <Button className={styles.btn} onClick={logOutHandler}>
-            Log out
-          </Button>
-        </li>
+        {props.logInState && (
+          <li>
+            <a href="/">Admin</a>
+          </li>
+        )}
+        {props.logInState && (
+          <li>
+            <a href="/">User</a>
+          </li>
+        )}
+        {props.logInState && (
+          <li>
+            <Button className={styles.btn} onClick={logOutHandler}>
+              Log out
+            </Button>
+          </li>
+        )}
       </ul>
     </nav>
   );
